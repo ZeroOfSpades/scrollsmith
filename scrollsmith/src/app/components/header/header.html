@@ -1,0 +1,24 @@
+<header>
+  <div id="header-elements">
+
+    <div id="small-logo" (click)="rm.goTo('home')">
+      <img src="Logo.png" alt="Scrollsmith"/>
+    </div>
+
+    @if (rm.loggedIn) {
+      <div id="profile">
+        <img src="" alt="Profile"/>
+      </div>
+    } @else {
+      <div id="signup" (click)="rm.goTo('register')">
+        Sign up
+      </div>
+      <div id="login" (click)="rm.goTo('login')">
+        Log in
+      </div>
+    }
+
+
+
+  </div>
+</header>

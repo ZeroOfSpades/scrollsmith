@@ -1,0 +1,17 @@
+@import '../../styles';
+
+#profile-panel {
+  @include paper-panel;
+  display: flex;
+  flex-direction: column;
+  #profile-data {
+    display: flex;
+    flex-direction: row;
+    #profile-picture {
+
+    }
+  }
+  label {
+    color: gray;
+  }
+}
