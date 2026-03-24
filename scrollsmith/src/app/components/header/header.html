@@ -7,15 +7,17 @@
 
     @if (rm.loggedIn && ud.currentUserId !== null) {
       <div id="profile" (click)="rm.goTo('users/'+ud.users[ud.currentUserId].userName)">
-        <img src="" alt="Profile"/>
+        <img src="Profile.png" alt="Profile"/>
         {{ud.users[ud.currentUserId].userName}}
       </div>
     } @else {
-      <div id="signup" (click)="rm.goTo('register')">
-        Sign up
-      </div>
-      <div id="login" (click)="rm.goTo('login')">
-        Log in
+      <div id="not-logged-in">
+        <div id="signup" (click)="rm.goTo('register')">
+          Sign up
+        </div>
+        <div id="login" (click)="rm.goTo('login')">
+          Log in
+        </div>
       </div>
     }
 

@@ -14,6 +14,11 @@ import {loginCheckerGuard} from './login-checker-guard';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     title: 'bla',
     component: AppRouter,
     children: [
