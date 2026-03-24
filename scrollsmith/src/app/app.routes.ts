@@ -55,6 +55,11 @@ export const routes: Routes = [
             path: 'profile',
             title: 'Profile',
             component: Profile
+          },
+          {
+            path: ':deskId',
+            title: 'Profile',
+            component: Desk
           }
         ]
       }

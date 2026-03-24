@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { Router } from '@angular/router';
+import {RouterMethods} from '../../router-methods';
 
 @Component({
   selector: 'app-new-desk',
@@ -8,10 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './new-desk.scss',
 })
 export class NewDesk {
+  rm = inject(RouterMethods);
 
-  constructor(private router: Router) { }
-
-  goToNewDesk(): void {
-    this.router.navigate(['new']);
-  }
 }
