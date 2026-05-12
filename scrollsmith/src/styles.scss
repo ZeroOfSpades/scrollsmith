@@ -1,10 +1,10 @@
 $main-color: rebeccapurple;
 $main-color-dark: rgb(100, 0, 100);
-
 $paper-color: rgb(250, 250, 200);
 $paper-color-dark: rgb(150, 150, 100);
-
 $paper-color-light: white;
+
+$border-radius: 20px;
 
 @mixin paper-panel {
   border-image-source: url("../public/ScrollBox.gif");
@@ -14,7 +14,13 @@ $paper-color-light: white;
 
 @mixin scrolls-button {
   background-color: $main-color;
-  color: white;
+  color: $paper-color-light;
+}
+
+@mixin menu-panel {
+  background-color: $paper-color-light;
+  color: $main-color;
+  border-radius: $border-radius;
 }
 
 html {

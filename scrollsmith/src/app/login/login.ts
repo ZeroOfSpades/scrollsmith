@@ -1,7 +1,8 @@
 import {Component, inject} from '@angular/core';
 import { RouterMethods } from '../router-methods';
-import {FormsModule} from '@angular/forms';
+import {FormGroup, FormsModule} from '@angular/forms';
 import {UserData} from '../user-data';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,27 @@ import {UserData} from '../user-data';
 })
 export class Login {
   rm = inject(RouterMethods);
-  ud = inject(UserData);
+  //ud = inject(UserData);
+  us = inject(UserService);
 
-  un:string = '';
   em:string = '';
+  pw:string = '';
+
 
   warning = '';
 
+  logIn() {
+    this.us.login(this.em, this.pw)
+      .then(() => {
+        this.rm.loggedIn = true
+        this.rm.goTo('home');
+      })
+      .catch(err => {
+        this.warning = err;
+      });
+  }
+
+  /*
   logIn() {
     for (let i = 0; i < this.ud.users.length; i++) {
       if(this.ud.users[i].userName == this.un) {
@@ -34,4 +49,6 @@ export class Login {
     this.warning="There's no username like this..."
 
   }
+
+   */
 }

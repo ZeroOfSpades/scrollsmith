@@ -1,0 +1,11 @@
+@import "../../../../../../styles.scss";
+
+#context-menu {
+  @include menu-panel;
+  width: 100px;
+  height: auto;
+}
+
+.cmenu-option {
+  height: 30px;
+}

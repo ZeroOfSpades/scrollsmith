@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {RouterMethods} from '../router-methods';
 import {UserData} from '../user-data';
 import {FormsModule} from '@angular/forms';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -13,13 +14,28 @@ import {FormsModule} from '@angular/forms';
 })
 export class Register {
   rm = inject(RouterMethods);
-  ud = inject(UserData);
-
+  //ud = inject(UserData);
+  us = inject(UserService);
 
 
   un:string = 'default';
   em:string = 'default@default.hu';
+  pw:string = 'default';
 
+  warning = '';
+
+  signUp() {
+    this.us.signup(this.un, this.em, this.pw)
+      .then(() => {
+        this.rm.loggedIn = true;
+        this.rm.goTo('home');
+      })
+      .catch(err => {
+        this.warning = err;
+      });
+  }
+
+  /*
   signUp() {
     if (this.un != null && this.em != null) {
       this.rm.loggedIn = true;
@@ -33,4 +49,6 @@ export class Register {
     }
     console.log(this.ud.users);
   }
+
+   */
 }
