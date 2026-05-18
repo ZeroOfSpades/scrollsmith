@@ -7,7 +7,7 @@ import {AppRouter} from './app-router/app-router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule, Header, Footer, AppRouter],
+  imports: [RouterModule, Header, Footer, AppRouter],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

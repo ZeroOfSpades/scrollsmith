@@ -1,1 +1,16 @@
+@use "../../styles";
 
+main {
+    position: absolute;
+    width: 1000px;
+    height: calc(100vh - 50px);
+    background-color: styles.$paper-color-dark;
+    z-index: 10;
+}
+
+app-desk-card {
+    width: 30%;
+    height: 10%;
+    margin: 0;
+    position: absolute;
+}

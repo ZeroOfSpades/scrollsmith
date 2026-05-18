@@ -1,7 +1,7 @@
-@import "../../../../../../styles.scss";
+@use "../../../../../../styles.scss";
 
 #context-menu {
-  @include menu-panel;
+  @include styles.menu-panel;
   width: 100px;
   height: auto;
 }

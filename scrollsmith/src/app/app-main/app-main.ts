@@ -10,8 +10,6 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
   selector: 'app-app-main',
     imports: [
         Explore,
-        Footer,
-        Header,
         Hero,
         NewDesk
     ],

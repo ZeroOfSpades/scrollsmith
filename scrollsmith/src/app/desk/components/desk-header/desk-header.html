@@ -1,6 +1,13 @@
-@if(rm.loggedIn){
-  <button>
-    Save
-  </button>
-}
-<p>desk-header works!</p>
+<div class="desk-header">
+  @if(rm.loggedIn){
+    <form class="desk-header-form" (submit)="ds.saveDesk(deskForm.value.name, deskForm.value.icon, cards)" [formGroup]="deskForm">
+      <input type="text" class="desk-name-input" formControlName="name" placeholder="Enter desk name" />
+      <input type="file" class="desk-icon-input" formControlName="icon"/>
+      <input type="submit" class="save-desk-button" value="Save Desk" />
+    </form>
+  } @else {
+    <div class="desk-header-logged-out">
+      Please log in to save your desk.
+    </div>
+  }
+</div>

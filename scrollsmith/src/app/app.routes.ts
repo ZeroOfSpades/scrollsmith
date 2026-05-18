@@ -49,7 +49,7 @@ export const routes: Routes = [
       },
       {
         path: 'new',
-        component: Desk
+        component: Desk,
       },
       {
         path: 'users/:user',

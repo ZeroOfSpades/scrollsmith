@@ -1,7 +1,7 @@
-@import '../../styles';
+@use '../../styles';
 
 #settings-panel {
-  @include paper-panel;
+  @include styles.paper-panel;
   display: flex;
   flex-direction: column;
   #theme {

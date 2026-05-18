@@ -1,7 +1,7 @@
-@import '../../styles';
+@use '../../styles';
 
 #profile-panel {
-  @include paper-panel;
+  @include styles.paper-panel;
   display: flex;
   flex-direction: column;
   #profile-data {
@@ -12,6 +12,6 @@
     }
   }
   label {
-    color: gray;
+    color: styles.$text-color;
   }
 }

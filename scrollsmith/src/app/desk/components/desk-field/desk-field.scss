@@ -1,7 +1,7 @@
-@import "../../../../styles";
+@use "../../../../styles";
 
 #desk-base {
   height: 1000px;
   width: 600px;
-  background-color: $paper-color;
+  background-color: styles.$paper-color;
 }

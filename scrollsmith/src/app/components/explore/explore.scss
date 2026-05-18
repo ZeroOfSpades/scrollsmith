@@ -1,11 +1,11 @@
-@import '../../../styles';
+@use '../../../styles';
 
 #explore-button {
   width: auto;
   align-content: center;
   button {
     display: block;
-    @include scrolls-button;
+    @include styles.scrolls-button;
     width: 20em;
     height: 5em;
     border: none;
