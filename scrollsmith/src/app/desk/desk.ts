@@ -3,12 +3,14 @@ import {DeskHeader} from './components/desk-header/desk-header';
 import {DeskField} from './components/desk-field/desk-field';
 import { DeskCard } from './components/desk-card/desk-card';
 import { ICard } from '../models/ICard';
+import {CdkDragDrop, DragDropModule} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-desk',
   imports: [
     DeskHeader,
-    DeskCard
+    DeskCard,
+    DragDropModule
   ],
   templateUrl: './desk.html',
   styleUrl: './desk.scss'
@@ -16,6 +18,7 @@ import { ICard } from '../models/ICard';
 
 
 export class Desk {
+
   name:string;
   icon:string;
   cardId: number = 0;
@@ -41,9 +44,20 @@ export class Desk {
       x: x,
       y: y,
       name: "New Card",
-      icon: "assets/default-card-icon.png"
+      icon: "assets/default-card-icon.png",
+      desc: "Description"
     }
     this.cards.push(newCard);
     console.log("Added card at:", x, y);
+  }
+
+  onCardSaved(cardData: {id: number, name: string, icon: string, desc: string}) {
+    const card = this.cards.find(c => c.id === cardData.id);
+    if (card) {
+      card.name = cardData.name;
+      card.icon = cardData.icon;
+      card.desc = cardData.desc;
+      console.log("Card saved:", card);
+    }
   }
 }

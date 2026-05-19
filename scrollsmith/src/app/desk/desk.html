@@ -1,6 +1,19 @@
 <app-desk-header [cards]="cards"></app-desk-header>
-<main (click)="$event.preventDefault(); addCard($event.clientX, $event.clientY)">
+<main (click)="$event.preventDefault(); addCard($event.clientX, $event.clientY)"
+      class="desk-field">
   @for (card of cards; track card.id) {
-    <app-desk-card [id]="card.id" [x]="card.x" [y]="card.y" [name]="card.name" [icon]="card.icon" (click)="$event.stopPropagation()" [style.left.px]="card.x" [style.top.px]="card.y"></app-desk-card>
+    <app-desk-card
+      [id]="card.id"
+      [x]="card.x"
+      [y]="card.y"
+      [name]="card.name"
+      [icon]="card.icon"
+      [desc]="card.desc"
+      (click)="$event.stopPropagation()"
+      [style.left.px]="card.x"
+      [style.top.px]="card.y"
+      (cardSaved)="onCardSaved($event)"
+      cdkDrag>
+    </app-desk-card>
   }
 </main>

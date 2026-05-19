@@ -1,26 +1,46 @@
-import { Component, Inject, Input } from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
+import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-desk-card',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './desk-card.html',
   styleUrl: './desk-card.scss',
 })
 export class DeskCard {
   private readonly fb: FormBuilder = new FormBuilder();
+  readonly cardForm: FormGroup;
   @Input() id: number | undefined;
   @Input() x: number | undefined;
   @Input() y: number | undefined;
-  @Input() name: string;
-  @Input() icon: string;
+  @Input() name: string = "";
+  @Input() icon: string = "";
+  @Input() desc: string = "";
+
+  @Output() cardSaved = new EventEmitter<{id: number, name: string, icon: string, desc: string}>();
 
   constructor() {
-    this.name = "New Card";
-    this.icon = "assets/default-card-icon.png";
+    this.cardForm = this.fb.nonNullable.group({
+      Name: '',
+      Image: '',
+      Description: ''
+    });
   }
 
-  readonly cardForm = this.fb.nonNullable.group({
-    
-  });
+
+
+  saveCard() {
+    this.name = this.cardForm.get('Name')?.value;
+    this.icon = this.cardForm.get('Image')?.value;
+    this.desc = this.cardForm.get('Description')?.value;
+    console.log("Saving card:", this.name, this.icon, this.desc);
+    if (this.id !== undefined) {
+      this.cardSaved.emit({
+        id: this.id,
+        name: this.name,
+        icon: this.icon,
+        desc: this.desc
+      });
+    }
+  }
 }

@@ -3,5 +3,6 @@ export interface ICard {
     x: number,
     y: number,
     name: string,
-    icon: string
+    icon: string,
+    desc: string
 }
