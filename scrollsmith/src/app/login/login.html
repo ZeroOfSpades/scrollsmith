@@ -1,6 +1,8 @@
-<input type="text" id="email-check" [(ngModel)]="em"/>
-<input type="password" id="password-check" [(ngModel)]="pw"/>
-{{warning}}
-<button (click)="logIn()">
-  Log in!
-</button>
+<div id="login-page">
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <input type="text" id="email-check" formControlName="email"/>
+    <input type="password" id="password-check" formControlName="password"/>
+    {{warning}}
+    <input type="submit" id="submit-button" value="Log in!"/>
+  </form>
+</div>

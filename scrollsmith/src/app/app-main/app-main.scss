@@ -8,7 +8,5 @@
 }
 
 #main-scroll {
-  border-image-source: url("../../../public/ScrollBox.gif");
-  border-image-slice: 30% fill;
-  border-image-width: 0em 10em;
+  @include styles.paper-panel;
 }

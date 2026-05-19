@@ -1,20 +1,20 @@
 import {Component, inject} from '@angular/core';
 import { RouterMethods } from '../router-methods';
-import {FormGroup, FormsModule} from '@angular/forms';
+import {Form, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserData} from '../user-data';
 import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-login',
   imports: [
-    FormsModule
+    ReactiveFormsModule
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
 export class Login {
   rm = inject(RouterMethods);
-  //ud = inject(UserData);
+  ud = inject(UserData);
   us = inject(UserService);
 
   em:string = '';
@@ -23,10 +23,23 @@ export class Login {
 
   warning = '';
 
+  fb: FormBuilder = new FormBuilder();
+  loginForm: FormGroup;
+
+  constructor() {
+    this.loginForm = this.fb.group({
+      email: '',
+      password: ''
+    });
+  }
+
   logIn() {
+    this.em = this.loginForm.get('email')?.value;
+    this.pw = this.loginForm.get('password')?.value;
     this.us.login(this.em, this.pw)
-      .then(() => {
-        this.rm.loggedIn = true
+      .then((user) => {
+        this.rm.loggedIn = true;
+        this.ud.currentUserId = user.id;
         this.rm.goTo('home');
       })
       .catch(err => {

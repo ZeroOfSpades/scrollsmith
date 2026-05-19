@@ -8,7 +8,7 @@
     @if (rm.loggedIn && ud.currentUserId !== null) {
       <div id="profile" (click)="rm.goTo('users/'+ud.users[ud.currentUserId].userName)">
         <img src="Profile.png" alt="Profile"/>
-        {{ud.users[ud.currentUserId].userName}}
+        {{ud.currentUserId ? ud.currentUserId : ''}}
       </div>
     } @else {
       <div id="not-logged-in">

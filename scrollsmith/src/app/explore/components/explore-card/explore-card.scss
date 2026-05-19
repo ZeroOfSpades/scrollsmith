@@ -1,0 +1,10 @@
+@use '../../../../styles.scss';
+
+.explore-card {
+    background-color: styles.$paper-color-light;
+    border-radius: 20px;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+}

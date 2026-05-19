@@ -19,6 +19,7 @@ import {CdkDragDrop, DragDropModule} from '@angular/cdk/drag-drop';
 
 export class Desk {
 
+  id: number;
   name:string;
   icon:string;
   cardId: number = 0;
@@ -28,6 +29,7 @@ export class Desk {
 
 
   constructor() {
+    this.id = 0;
     this.name = "My Desk";
     this.icon = "assets/default-desk-icon.png";
     this.cards = [];

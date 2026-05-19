@@ -1,11 +1,16 @@
 @use "../../styles";
 
 main {
-    position: absolute;
-    width: 1000px;
+    width: 100%;
     height: calc(100vh - 50px);
-    background-color: styles.$paper-color-dark;
-    z-index: 10;
+    @include styles.paper-panel;
+}
+
+app-desk-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 app-desk-card {

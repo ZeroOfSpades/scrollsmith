@@ -4,3 +4,14 @@
     border-radius: 20px;
     background-color: styles.$paper-color-light;
 }
+
+.desk-card-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input, textarea {
+    margin: 10px;
+}

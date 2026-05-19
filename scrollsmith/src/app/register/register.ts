@@ -1,20 +1,20 @@
 import {Component, inject} from '@angular/core';
 import {RouterMethods} from '../router-methods';
 import {UserData} from '../user-data';
-import {FormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-register',
   imports: [
-    FormsModule
+    ReactiveFormsModule
   ],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
 export class Register {
   rm = inject(RouterMethods);
-  //ud = inject(UserData);
+  ud = inject(UserData);
   us = inject(UserService);
 
 
@@ -24,10 +24,25 @@ export class Register {
 
   warning = '';
 
+  registerForm: FormGroup;
+  fb: FormBuilder = new FormBuilder();
+
+  constructor() { 
+    this.registerForm = this.fb.group({
+      username: '',
+      email: '',
+      password: ''
+    });
+  }
+
   signUp() {
+    this.un = this.registerForm.get('username')?.value;
+    this.em = this.registerForm.get('email')?.value;
+    this.pw = this.registerForm.get('password')?.value;
     this.us.signup(this.un, this.em, this.pw)
-      .then(() => {
+      .then((user) => {
         this.rm.loggedIn = true;
+        this.ud.currentUserId = user.id;
         this.rm.goTo('home');
       })
       .catch(err => {

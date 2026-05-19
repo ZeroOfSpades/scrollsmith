@@ -1,5 +1,5 @@
 <div id=explore-panel>
-  <div id="search-bar">
-    
-  </div>
+  @for (desk of desks; track desk.id) {
+    <app-explore-card [name]="desk.name" [icon]="desk.icon"></app-explore-card>
+  }
 </div>

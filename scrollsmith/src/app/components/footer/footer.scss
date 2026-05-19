@@ -1,5 +1,9 @@
 @use "../../../styles.scss";
 
 footer {
-  color: styles.$paper-color-light;
+  color: styles.$paper-color;
+  background-color: styles.$scarlet-color;
+  margin-top: 50px;
+  width: 100%;
+  height: 50px;
 }
