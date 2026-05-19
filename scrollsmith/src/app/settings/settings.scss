@@ -1,0 +1,11 @@
+@use '../../styles';
+
+#settings-panel {
+  @include styles.paper-panel;
+  display: flex;
+  flex-direction: column;
+  #theme {
+    display: flex;
+    flex-direction: row;
+  }
+}

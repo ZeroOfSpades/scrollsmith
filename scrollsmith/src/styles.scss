@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+$main-color: rebeccapurple;
+$main-color-dark: rgb(100, 0, 100);
+$paper-color: rgb(250, 250, 200);
+$paper-color-dark: rgb(150, 150, 100);
+$paper-color-light: white;
+$scarlet-color: rgb(170, 70, 70);
+
+$border-radius: 20px;
+
+@font-face {
+  font-family: ReemKufi;
+  src: url("./app/assets/fonts/ReemKufi-Regular.ttf") format("truetype");
+}
+
+@mixin paper-panel {
+  border-image-source: url("../public/ScrollBox.gif");
+  border-image-slice: 30% fill;
+  border-image-width: 10em 10em;
+}
+
+@mixin scrolls-button {
+  background-color: $main-color;
+  color: $paper-color-light;
+}
+
+@mixin menu-panel {
+  background-color: $paper-color-light;
+  color: $main-color;
+  border-radius: $border-radius;
+}
+
+html {
+  background-color: $main-color;
+  width: 100%;
+  height: 100%;
+  font-family: ReemKufi, sans-serif;
+}

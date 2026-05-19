@@ -1,0 +1,7 @@
+@use "../../../../styles";
+
+#desk-base {
+  height: 1000px;
+  width: 600px;
+  background-color: styles.$paper-color;
+}

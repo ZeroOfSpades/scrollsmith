@@ -1,0 +1,19 @@
+@use "../../../../styles.scss";
+
+.desk-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: styles.$scarlet-color;
+    width: 100%;
+    height: 99px;
+    color: styles.$paper-color;
+}
+
+input {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid styles.$paper-color-dark;
+}

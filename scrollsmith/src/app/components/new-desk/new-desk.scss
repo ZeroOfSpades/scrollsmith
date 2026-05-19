@@ -1,0 +1,15 @@
+@use '../../../styles';
+
+#new-desk-button {
+  width: auto;
+  align-content: center;
+  button {
+    display: block;
+    @include styles.scrolls-button;
+    width: 20em;
+    height: 5em;
+    border: none;
+    border-radius: 1em;
+    margin: 2em auto;
+  }
+}

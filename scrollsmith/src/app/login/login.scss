@@ -1,0 +1,28 @@
+@use "../../styles.scss";
+
+form {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    @include styles.paper-panel;
+    margin: 100px auto;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid styles.$paper-color-dark;
+}
+
+#submit-button {
+    background-color: styles.$scarlet-color;
+    color: styles.$paper-color;
+    border: none;
+    cursor: pointer;
+}

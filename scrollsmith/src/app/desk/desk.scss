@@ -1,0 +1,22 @@
+@use "../../styles";
+
+main {
+    width: 100%;
+    height: calc(100vh - 50px);
+    @include styles.paper-panel;
+}
+
+app-desk-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+app-desk-card {
+    cursor: move;
+    width: 30%;
+    height: 10%;
+    margin: 0;
+    position: absolute;
+}

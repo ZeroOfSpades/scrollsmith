@@ -1,0 +1,49 @@
+@use "../../../styles.scss";
+
+header {
+  background-color: styles.$scarlet-color;
+  width: 100%;
+  height: 120px;
+}
+
+#header-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  #small-logo {
+    img {
+      width: 10em;
+      height: auto;
+    }
+  }
+}
+
+#profile {
+  color: white;
+  img {
+    width: 3em;
+    height: auto;
+  }
+}
+
+#not-logged-in {
+  display: flex;
+  flex-direction: row;
+  #signup {
+    background-color: styles.$paper-color;
+    color: styles.$main-color;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+  }
+  #login {
+    background-color: styles.$paper-color;
+    color: styles.$main-color;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
+

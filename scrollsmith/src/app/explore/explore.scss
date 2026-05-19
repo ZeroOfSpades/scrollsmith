@@ -1,0 +1,12 @@
+@use '../../styles.scss';
+
+#explore-panel {
+    @include styles.paper-panel;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 50px;
+    height: 500px;
+    width: 80%;
+}

@@ -1,0 +1,17 @@
+<div class="desk-card">
+  <form class="desk-card-form" (ngSubmit)="saveCard()" [formGroup]="cardForm">
+    <label>
+      Name:
+      <input type="text" formControlName="Name"/>
+    </label>
+    <label>
+      Main image:
+      <input type="text" formControlName="Image"/>
+    </label>
+    <label>
+      Description:
+      <textarea formControlName="Description"></textarea>
+    </label>
+    <input type="submit" value="Save"/>
+  </form>
+</div>

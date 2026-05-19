@@ -1,0 +1,7 @@
+<form [formGroup]="registerForm">
+  <input type="text" id="username-input" formControlName="username"/>
+  <input type="text" id="email-input" formControlName="email"/>
+  <input type="password" id="password-input" formControlName="password"/>
+  {{warning}}
+  <input type="submit" id="submit-button" (click)="signUp()" value="Sign up!"/>
+</form>
