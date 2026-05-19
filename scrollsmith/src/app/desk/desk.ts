@@ -62,4 +62,9 @@ export class Desk {
       console.log("Card saved:", card);
     }
   }
+
+  onCardDeleted(cardId: number) {
+    this.cards = this.cards.filter(c => c.id !== cardId);
+    console.log("Card deleted with id:", cardId);
+  }
 }
