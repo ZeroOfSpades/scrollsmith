@@ -13,6 +13,7 @@
       [style.left.px]="card.x"
       [style.top.px]="card.y"
       (cardSaved)="onCardSaved($event)"
+      (cardDeleted)="onCardDeleted($event)"
       cdkDrag>
     </app-desk-card>
   }

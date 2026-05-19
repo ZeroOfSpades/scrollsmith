@@ -11,7 +11,7 @@ import { Desk } from '../desk/desk';
   styleUrl: './explore.scss',
 })
 export class Explore {
-
+  
   
   deskService = new DeskService();
   desks: Desk[] = [];

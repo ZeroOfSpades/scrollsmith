@@ -18,6 +18,7 @@ export class DeskCard {
   @Input() desc: string = "";
 
   @Output() cardSaved = new EventEmitter<{id: number, name: string, icon: string, desc: string}>();
+  @Output() cardDeleted = new EventEmitter<number>();
 
   constructor() {
     this.cardForm = this.fb.nonNullable.group({
@@ -41,6 +42,12 @@ export class DeskCard {
         icon: this.icon,
         desc: this.desc
       });
+    }
+  }
+
+  deleteCard() {
+    if (this.id !== undefined) {
+      this.cardDeleted.emit(this.id);
     }
   }
 }
