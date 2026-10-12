@@ -3,7 +3,7 @@
 main {
     width: 100%;
     height: calc(100vh - 50px);
-    @include styles.paper-panel;
+    background-color: styles.$paper-color;
 }
 
 app-desk-header {

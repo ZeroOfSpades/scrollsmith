@@ -1,5 +1,17 @@
 @use '../../../styles';
 
+#newdesk-scroll-bg {
+  position: absolute;
+  right: -150px;
+  width: 500px;
+  height: 700px;
+  transform: rotate(60deg);
+  background-color: styles.$paper-color;
+  border-radius: 15px;
+  align-content: center;
+  float: right;
+}
+
 #new-desk-button {
   width: auto;
   align-content: center;

@@ -1,5 +1,17 @@
 @use '../../../styles';
 
+#explore-scroll-bg {
+  position: absolute;
+  left: -150px;
+  width: 500px;
+  height: 700px;
+  transform: rotate(-60deg);
+  background-color: styles.$paper-color;
+  border-radius: 15px;
+  align-content: center;
+
+}
+
 #explore-button {
   width: auto;
   align-content: center;

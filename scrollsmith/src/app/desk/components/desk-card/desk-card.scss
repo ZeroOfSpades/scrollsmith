@@ -1,8 +1,9 @@
 @use "../../../../styles.scss";
 
 .desk-card {
+    border: 5px solid styles.$paper-color-dark;
     border-radius: 20px;
-    background-color: styles.$paper-color-light;
+    background-color: styles.$paper-color;
 }
 
 .desk-card-form {
