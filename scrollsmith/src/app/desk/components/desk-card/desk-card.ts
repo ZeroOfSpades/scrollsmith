@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Inject, Input, Output } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {ICard} from '../../../models/ICard';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-desk-card',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './desk-card.html',
   styleUrl: './desk-card.scss',
 })
@@ -27,7 +27,7 @@ export class DeskCard {
   constructor() {
     this.cardForm = this.fb.nonNullable.group({
       Name: '',
-      Image: '',
+      Icon: '',
       Description: '',
       Connection: '',
     });
@@ -37,9 +37,9 @@ export class DeskCard {
 
   saveCard() {
     this.name = this.cardForm.get('Name')?.value;
-    this.icon = this.cardForm.get('Image')?.value;
+    this.icon = this.cardForm.get('Icon')?.value;
     this.desc = this.cardForm.get('Description')?.value;
-    this.conn = this.cardForm.get('')?.value;
+    this.conn = this.cardForm.get('Connection')?.value;
     console.log("Saving card:", this.name, this.icon, this.desc, this.conn);
     if (this.id !== undefined) {
       this.cardSaved.emit({

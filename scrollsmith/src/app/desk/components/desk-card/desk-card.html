@@ -6,7 +6,10 @@
     </label>
     <label>
       Main image:
-      <input type="text" formControlName="Image"/>
+      <input type="file" formControlName="Icon"/>
+      @if (icon !== '') {
+        <img ngSrc="{{icon}}" fill alt="Please select an image">
+      }
     </label>
     <label>
       Description:
