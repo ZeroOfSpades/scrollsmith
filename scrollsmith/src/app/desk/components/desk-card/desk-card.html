@@ -12,6 +12,14 @@
       Description:
       <textarea formControlName="Description"></textarea>
     </label>
+    <label>
+      Connection:
+      <select formControlName="Connection">
+        @for(card of cards; track card) {
+          <option [value]="card.id">{{ card.name }}</option>
+        }
+      </select>
+    </label>
     <input type="submit" value="Save"/>
     <button type="button" (click)="deleteCard()">Delete</button>
   </form>

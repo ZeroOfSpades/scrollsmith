@@ -4,5 +4,6 @@ export interface ICard {
     y: number,
     name: string,
     icon: string,
-    desc: string
+    desc: string,
+    conn: string
 }

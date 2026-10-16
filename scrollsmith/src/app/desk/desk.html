@@ -1,7 +1,7 @@
 <app-desk-header [cards]="cards"></app-desk-header>
 <main (click)="$event.preventDefault(); addCard($event.clientX, $event.clientY)"
       class="desk-field">
-  @for (card of cards; track card.id) {
+  @for (card of cards$ | async; track card.id) {
     <app-desk-card
       [id]="card.id"
       [x]="card.x"
@@ -9,6 +9,8 @@
       [name]="card.name"
       [icon]="card.icon"
       [desc]="card.desc"
+      [conn]="card.conn"
+      [cards]="cards"
       (click)="$event.stopPropagation()"
       [style.left.px]="card.x"
       [style.top.px]="card.y"
